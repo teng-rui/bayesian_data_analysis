@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "Anom"
+output: pdf_document
+---
+
+# Introduction
+
+Cardiovascular disease is one of the most common death causes in the world. It kills around 17 million people annually. Most common death cause for the cardiovascular patient is Heart failure which is a situation in which the heart cannot pump enough blood compared to the amount the body needs to be functional. As there is only a very limited time between the beginning of heart failure and death it is critical to identify which part of the population is in the risk group for it and which factors predict likelihood of the heart failure.
+
+The problem which this project is trying to solve is, how to predict whether heart failure patient will survive over the follow up period. This is essential in order to adjust the follow up times such that patient is alive to participate follow up meeting with the doctor after follow up period.
+
+The idea is to create a model which predicts heart failure patients' death during the follow up period. In this report we use one hierarcical and one non-hierarcical model to this task. Both models are linear and they use logit function as link function as the target predict binary outcome of whether or not the patient dies during follow up period.
+
+
+# Dataset
+
+Used data contain medical records of 299 heart failure patients. The records are collected during April-December 2015 from Faisalabad Institute of Cardiology and at the Allied Hospital in Faisalabad(Punjab, Pakistan). There are 105 female and 194 male patients in the data. They are from the age range between 40 and 95. 
+
+In dataset there are 13 attributes recorded about every patients:
+
+- age: in year
+- anaemia: boolean value  which describe whether or not there are decrease of blood cells or hemoglobin
+- High blood pressure: boolean value which indicate hypertension
+- creatinine phosphokinase (CPK): level of the CPK enzyme in the blood in mcg/L
+- diabetes: boolean value about whether the patient has diabetes (boolean)
+- ejection fraction: percentage of blood leaving the heart at each contraction (percentage)
+- platelets: platelets in the blood in kiloplatelets/mL
+- sex: boolean value which indicate gender such that female have value zero and male value one  
+- serum creatinine: level of serum creatinine in the blood (mg/dL)
+- serum sodium: level of serum sodium in the blood (mEq/L)
+- smoking: Boolean value about whether the patient smokes or not 
+- time: follow-up period in days
+- death event: Boolean value about the patient deceased during the follow-up period
+
+In the models of this report death, the death event is the attribute which is tried to predict using other features. Creatine phosphokinase and, time and platelet are filtered out as they do not have remarkable influence to the outcome.
+
